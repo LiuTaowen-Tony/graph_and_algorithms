@@ -1,9 +1,9 @@
-from dataStructures.graphs.Graph_I import Graph
-from dataStructures.graphs.MatrixGraph import MatrixGraph
+from data_structure.graphs.Graph_I import Graph
+from data_structure.graphs.MatrixGraph import MatrixGraph
 from collections import deque as Queue
 
 
-def shortestPathUnweighted(graph: Graph, start: int, end: int):
+def shortest_path_unweighted(graph: Graph, start: int, end: int):
     """
     input: unWeighted graph, start, end
     returns: distance from start to end
@@ -29,3 +29,16 @@ def shortestPathUnweighted(graph: Graph, start: int, end: int):
                 queue.append(child)
 
     return distanceFrom[start]
+
+def testShortestPathUnweighted():
+    mat = [
+        [0, 0, 1, 0, 1],
+        [0, 0, 1, 1, 0],
+        [1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [1, 0, 1, 0, 0]
+        ]
+
+    graph = MatrixGraph(mat)
+    print(shortest_path_unweighted(graph, 0, 3)) # 3
+    print(shortest_path_unweighted(graph, 2, 3)) # 2

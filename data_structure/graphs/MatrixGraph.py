@@ -1,4 +1,4 @@
-from dataStructures.graphs.Graph_Mut_I import Graph_Mut
+from data_structure.graphs.Graph_Mut_I import Graph_Mut
 
 class MatrixGraph(Graph_Mut):
 

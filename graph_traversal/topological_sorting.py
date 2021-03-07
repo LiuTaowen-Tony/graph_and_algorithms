@@ -1,4 +1,4 @@
-# from dataStructures.graphs.Graph_I import Graph
+# from data_structure.graphs.Graph_I import Graph
 
 # def topological_sorting(graph : Graph):
 #     entered = []

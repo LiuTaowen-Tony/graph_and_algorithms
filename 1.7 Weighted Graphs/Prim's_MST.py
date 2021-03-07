@@ -1,5 +1,5 @@
-from dataStructures.graphs.Graph_I import Graph
-from dataStructures.trees.Tree_Mut_I import Tree_Mut, ArrayTree
+from data_structure.graphs.Graph_I import Graph
+from data_structure.trees.Tree_Mut_I import Tree_Mut, ArrayTree
 
 snd = lambda t : t[1]
 
