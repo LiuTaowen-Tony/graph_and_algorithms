@@ -12,5 +12,5 @@ if __name__ == "__main__":
         ]
 
     graph = MatrixGraph(mat)
+    print(shortestPathUnweighted(graph, 0, 3))
     print(shortestPathUnweighted(graph, 2, 3))
-    print(shortestPathUnweighted(graph, 1, 3))

@@ -15,7 +15,7 @@ class MatrixGraph(Graph_Mut):
 
     def adjacent_nodes_of(self, node_number):
         """returns list of (node_number, weight) pairs"""
-        return [x for x in enumerate(weight_matrix[node_number])
+        return [x for x in enumerate(self.weight_matrix[node_number])
                 if x[1] != 0]
 
     def update_arc(self, start, end, weight):

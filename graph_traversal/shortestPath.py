@@ -9,8 +9,9 @@ def shortestPathUnweighted(graph: Graph, start: int, end: int):
     returns: distance from start to end
     """
 
-    visited = [] * graph.num_of_nodes()
-    distanceFrom = [] * graph.num_of_nodes()
+    visited = [False] * graph.num_of_nodes()
+    distanceFrom = [0] * graph.num_of_nodes()
+    print(visited)
     queue = Queue()
 
     visited[end] = True
@@ -23,21 +24,8 @@ def shortestPathUnweighted(graph: Graph, start: int, end: int):
         for child, weight in graph.adjacent_nodes_of(current):
             if not visited[child]:
                 visited[child] = True
-                parent[child] = current
+                # parent[child] = current
                 distanceFrom[child] = distanceFrom[current] + 1
                 queue.append(child)
 
     return distanceFrom[start]
-
-if __name__ == "__main__":
-    mat = [
-        [0, 0, 1, 0, 1],
-        [0, 0, 1, 1, 0],
-        [1, 1, 0, 0, 0],
-        [0, 1, 0, 0, 0],
-        [1, 0, 1, 0, 0]
-        ]
-
-    graph = MatrixGraph(mat)
-    print(shortestPathUnweighted(graph, 2, 4))
-    print(shortestPathUnweighted(graph, 1, 4))
