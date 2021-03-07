@@ -1,4 +1,4 @@
-from dataStructures.trees.Tree_Mut_I import Tree_Mut
+from Tree_Mut_I import Tree_Mut
 
 class ArrayTree(Tree_Mut):
 

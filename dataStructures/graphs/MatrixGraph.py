@@ -13,7 +13,7 @@ class MatrixGraph(Graph_Mut):
         """
         self.weight_matrix = weight_matrix
 
-    def get_adjacent_nodes(self, node_number):
+    def adjacent_nodes_of(self, node_number):
         """returns list of (node_number, weight) pairs"""
         return [x for x in enumerate(weight_matrix[node_number])
                 if x[1] != 0]
@@ -26,3 +26,18 @@ class MatrixGraph(Graph_Mut):
 
     def weight_between(self, start, end):
         return self.weight_matrix[start][end]
+    
+    def __str__(self):
+        return str(self.weight_matrix)
+
+if __name__ == "__main__":
+    mat = [
+        [0, 0, 1, 0, 1],
+        [0, 0, 1, 1, 0],
+        [1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0],
+        [1, 0, 1, 0, 0]
+        ]
+
+    graph = MatrixGraph(mat)
+    print(graph)
