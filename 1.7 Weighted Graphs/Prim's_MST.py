@@ -1,7 +1,9 @@
-from _containers import Graph, Tree
+from dataStructures.graphs.Graph_I import Graph
+from dataStructures.trees.Tree_Mut_I import Tree_Mut
 
-def prim_MST_sort(graph : matrix_graph):
-    temp = [(False, False, -1 , -1)] * graph.num_of_nodes()
+
+def prim_MST_sort(graph: matrix_graph):
+    temp = [(False, False, -1, -1)] * graph.num_of_nodes()
     # in_tree, in_fringe, parent, weight
 
     def main():
@@ -13,7 +15,7 @@ def prim_MST_sort(graph : matrix_graph):
 
         while non_empty_fringe():
             # select minimum element according to weight
-            f = min(temp, key=snd) 
+            f = min(temp, key=snd)
             # move selected f from fringe to tree
             label_tree(node_num)
 
@@ -44,11 +46,11 @@ def prim_MST_sort(graph : matrix_graph):
         return any(map(snd, temp))
 
     def set_weight_parent(node_num, parent, weight):
-        temp[node_num] = (False ,True, parent, weight)
+        temp[node_num] = (False, True, parent, weight)
 
     def label_fringe(node_num):
         _, _, parent, weight = temp[node_num]
-        temp[node_num] = (False, True, parent, weight) 
+        temp[node_num] = (False, True, parent, weight)
 
     def label_tree(node_num):
         _, _, parent, weight = temp[node_num]
