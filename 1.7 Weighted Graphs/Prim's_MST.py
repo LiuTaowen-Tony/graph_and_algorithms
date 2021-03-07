@@ -1,6 +1,7 @@
 from dataStructures.graphs.Graph_I import Graph
-from dataStructures.trees.Tree_Mut_I import Tree_Mut
+from dataStructures.trees.Tree_Mut_I import Tree_Mut, ArrayTree
 
+snd = lambda t : t[1]
 
 def prim_MST_sort(graph: matrix_graph):
     temp = [(False, False, -1, -1)] * graph.num_of_nodes()
@@ -28,7 +29,7 @@ def prim_MST_sort(graph: matrix_graph):
                         set_weight_parent(y, graph.weight(f, y), f)
 
         # construct tree
-        generated_tree = array_tree(graph.num_of_nodes())
+        generated_tree = ArrayTree(graph.num_of_nodes())
 
     def is_in_tree(node_num):
         in_tree, _, _, _ = temp[node_num]
