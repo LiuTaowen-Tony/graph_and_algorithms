@@ -1,6 +1,19 @@
 from data_structure.graphs.Graph_I import Graph
 from data_structure.trees.Tree_Mut_I import Tree_Mut, ArrayTree
 
+# 一开始 naive 的想法是：
+#
+# 先选一个 tree 的 root 然后把周围标记为 fringe
+# 如果 fringe 非空
+#     那么选择从 tree 到 fringe 最短的路径 (*)
+#     把这个节点移到 tree
+#     这个节点周围是 fringe
+# 
+# 但是因为 (*) 这个操作是 (N + M) 的 (N 个树节点，M个可能路径)
+# 所以我们缓存一下最有可能更新的
+
+# 这个暂时跑不起来
+
 snd = lambda t : t[1]
 
 def prim_MST_sort(graph: matrix_graph):

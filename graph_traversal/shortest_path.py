@@ -5,8 +5,12 @@ from collections import deque as Queue
 
 def shortest_path_unweighted(graph: Graph, start: int, end: int):
     """
-    input: unWeighted graph, start, end
-    returns: distance from start to end
+    Args: \n
+        unWeighted graph, start, end \n
+    Returns: \n
+        distance from start to end \n
+    complexity :\n
+        N + M
     """
 
     visited = [False] * graph.num_of_nodes()
