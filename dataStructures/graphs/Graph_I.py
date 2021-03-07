@@ -6,11 +6,7 @@ class Graph(metaclass=abc.ABCMeta):
     def adjacent_nodes_of(self,node_number):
         """returns a list of (node_number, weight) pairs"""
         pass
-
-    @abc.abstractmethod
-    def update_arc(self,start,end,weight):
-        pass
-
+    
     @abc.abstractmethod
     def num_of_nodes(self):
         pass

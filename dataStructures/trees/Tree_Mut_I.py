@@ -1,6 +1,6 @@
 import abc
 
-class Tree(metaclass=abc.ABCMeta):
+class Tree_Mut(metaclass=abc.ABCMeta):
 
     @abs.abstractmethod
     def set_parent(self, child, parent, weight):

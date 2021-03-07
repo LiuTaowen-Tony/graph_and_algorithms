@@ -1,5 +1,6 @@
+from dataStructures.trees.Tree_Mut_I import Tree_Mut
 
-class ArrayTree(tree_meta):
+class ArrayTree(Tree_Mut):
 
     def __init__(self, number_of_nodes, initialize_list = []):
         """ initialize_list : [(parent, child, weight)] weight is 1 by default"""
