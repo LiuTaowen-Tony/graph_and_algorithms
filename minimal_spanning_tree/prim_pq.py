@@ -8,5 +8,5 @@ from heapq import *
 
 # 暂时不实现
 
-def prim_heap(graph : Graph):
+def prim_pq(graph : Graph):
     pqueue = heapify([])
