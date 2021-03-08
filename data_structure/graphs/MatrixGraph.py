@@ -1,3 +1,4 @@
+from itertools import product
 from data_structure.graphs.Graph_Mut_I import Graph_Mut
 
 class MatrixGraph(Graph_Mut):
@@ -30,14 +31,11 @@ class MatrixGraph(Graph_Mut):
     def __str__(self):
         return str(self.weight_matrix)
 
-if __name__ == "__main__":
-    mat = [
-        [0, 0, 1, 0, 1],
-        [0, 0, 1, 1, 0],
-        [1, 1, 0, 0, 0],
-        [0, 1, 0, 0, 0],
-        [1, 0, 1, 0, 0]
-        ]
+    def all_arcs(self):
+        nlst = list(range(self.num_of_nodes()))
+        w = lambda i, j: self.weight_between(i, j)
+        return [(w(i, j), (i, j)) for i,j in product(nlst, nlst) 
+            if w(i, j) != 0]
 
-    graph = MatrixGraph(mat)
-    print(graph)
+    def num_of_intersections(self):
+        return len(self.all_arcs())

@@ -11,8 +11,11 @@ from data_structure.trees.Tree_Mut_I import Tree_Mut, ArrayTree
 # 
 # 但是因为 (*) 这个操作是 (N + M) 的 (N 个树节点，M个可能路径)
 # 所以我们缓存一下最有可能更新的
-
-# 这个暂时跑不起来
+# 不缓存的复杂度是 O(N(N + M)) 缓存之后是 O(N ^ 2)
+# 
+# 证明是证每一步都是最小生成树的子图，然后用 induction 证明
+#
+# 我懒得改这个算法了，大概是这个意思
 
 snd = lambda t : t[1]
 

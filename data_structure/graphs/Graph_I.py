@@ -11,6 +11,19 @@ class Graph(metaclass=abc.ABCMeta):
     def num_of_nodes(self):
         pass
 
-    @abc.abstractclassmethod
+    @abc.abstractmethod
     def weight_between(self, start, end):
+        pass
+
+    @abc.abstractmethod
+    def all_arcs(self):
+        """
+        Returns: \n
+        Tuple [int, Tuple[int, int]] \n
+        (weight, (from, to))
+        """
+        pass
+    
+    @abc.abstractmethod
+    def num_of_intersections(self):
         pass
