@@ -11,7 +11,7 @@ def dijkstra(graph : Graph, start : int, end : int) -> int:
     """
     def select_minimum(fringe : list[bool], distance : list[int]) -> int:
         n = len(fringe)
-        lst = [(weight, node) for node in range(n) if fringe[node]]
+        lst = [(distance[node], node) for node in range(n) if fringe[node]]
         weight, node = min(lst)
         return node
 
@@ -31,6 +31,7 @@ def dijkstra(graph : Graph, start : int, end : int) -> int:
         current = select_minimum(fringe, distance)
         fringe[current] = False
         tree[current] = True
+        print(current)
         for child, weight in graph.adjacent_nodes_of(current):
             if not tree[child] and fringe[child]:
                 if distance[current] + weight < distance[child]:
