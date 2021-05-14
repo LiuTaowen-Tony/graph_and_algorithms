@@ -30,7 +30,7 @@ class MaxHeap:
         if position == 0:
             return
         parent_position = math.floor((position - 1) / 2)
-        if (self.__get_key(parent_position) < self.__get_key(position)):
+        if self.__get_key(parent_position) < self.__get_key(position):
             self.__swap(parent_position, position)
             self.__percolate_up(parent_position)
 
