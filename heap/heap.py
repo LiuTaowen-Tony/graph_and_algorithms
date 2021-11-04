@@ -92,7 +92,7 @@ class MaxHeap:
         return nlst
 
     def __in_place_sort(self):
-        while(self.next_pos > 0):
+            while(self.next_pos > 0):
             self.__swap(0, self.next_pos)
             self.next_pos -= 1
             self.__fix_max_heap(0)
