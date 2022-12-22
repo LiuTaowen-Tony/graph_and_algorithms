@@ -1,21 +1,20 @@
 from data_structure.graphs.Graph_I import Graph
 from data_structure.trees.Tree_Mut_I import Tree_Mut, ArrayTree
 
-# 一开始 naive 的想法是：
+# The idea of naive at the beginning is:
 #
-# 先选一个 tree 的 root 然后把周围标记为 fringe
-# 如果 fringe 非空
-#     那么选择从 tree 到 fringe 最短的路径 (*)
-#     把这个节点移到 tree
-#     这个节点周围是 fringe
-# 
-# 但是因为 (*) 这个操作是 (N + M) 的 (N 个树节点，M个可能路径)
-# 所以我们缓存一下最有可能更新的
-# 不缓存的复杂度是 O(N(N + M)) 缓存之后是 O(N ^ 2)
-# 
-# 证明是证每一步都是最小生成树的子图，然后用 induction 证明
+# First select the root of a tree and mark the surrounding as fringe
+# if fringe is not empty
+# Then choose the shortest path from tree to fringe (*)
+# move this node to the tree
+# This node is surrounded by fringe
 #
-# 我懒得改这个算法了，大概是这个意思
+# But because (*) this operation is (N + M) (N tree nodes, M possible paths)
+# So we cache the most likely update
+# The complexity without caching is O(N(N + M)) and after caching is O(N ^ 2)
+#
+# The proof is to prove that each step is a subgraph of the minimum spanning tree, and then use induction to prove
+#
 
 snd = lambda t : t[1]
 
